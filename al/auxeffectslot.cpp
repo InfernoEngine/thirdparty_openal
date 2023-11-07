@@ -1,3 +1,6 @@
+#define AL_LIBTYPE_SHARED
+#define AL_LIBTYPE_SHARED_EXPORTS
+
 /**
  * OpenAL cross platform audio library
  * Copyright (C) 1999-2007 by authors.

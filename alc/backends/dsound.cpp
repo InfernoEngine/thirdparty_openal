@@ -20,6 +20,8 @@
 
 #include "config.h"
 
+#pragma comment(lib, "Dsound.lib")
+
 #include "dsound.h"
 
 #define WIN32_LEAN_AND_MEAN

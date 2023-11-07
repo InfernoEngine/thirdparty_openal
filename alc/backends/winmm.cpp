@@ -47,6 +47,8 @@
 #include "ringbuffer.h"
 #include "strutils.h"
 
+#pragma comment(lib, "Winmm.lib")
+
 #ifndef WAVE_FORMAT_IEEE_FLOAT
 #define WAVE_FORMAT_IEEE_FLOAT  0x0003
 #endif

@@ -1207,7 +1207,7 @@ al::span<const char> GetResource(int /*name*/)
 #else
 
 constexpr unsigned char hrtf_default[]{
-#include "default_hrtf.txt"
+#include "hrtf/default_hrtf.txt"
 };
 
 al::span<const char> GetResource(int name)

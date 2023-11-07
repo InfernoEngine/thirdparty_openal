@@ -25,10 +25,15 @@ extern "C" {
 #endif
 
 #ifndef ALC_API
- #if defined(AL_LIBTYPE_STATIC)
+ #if defined(AL_LIBTYPE_STATIC) && !defined(AL_LIBTYPE_SHARED)
   #define ALC_API
  #elif defined(_WIN32)
-  #define ALC_API __declspec(dllimport)
+#if defined(AL_LIBTYPE_SHARED_EXPORTS)
+#define ALC_API __declspec(dllexport)
+#else
+#define ALC_API __declspec(dllimport)
+#endif
+
  #else
   #define ALC_API extern
  #endif

@@ -126,7 +126,7 @@ std::optional<std::string> AmbDecConf::load(const char *fname) noexcept
         }
         else if(scope == ReaderScope::LFMatrix || scope == ReaderScope::HFMatrix)
         {
-            auto &gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
+            auto *gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
             auto *matrix = (scope == ReaderScope::LFMatrix) ? LFMatrix : HFMatrix;
             auto &pos = (scope == ReaderScope::LFMatrix) ? lfmatrix_pos : hfmatrix_pos;
 
@@ -139,7 +139,7 @@ std::optional<std::string> AmbDecConf::load(const char *fname) noexcept
                 {
                     --toread;
                     istr >> value;
-                    if(curgain < std::size(gains))
+                    if(curgain < std::size(LFOrderGain))
                         gains[curgain++] = value;
                 }
             }

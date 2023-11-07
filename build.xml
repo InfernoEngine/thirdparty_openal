@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Module>
+	
+	<GlobalSolutionName>ThirdParty</GlobalSolutionName>
+	<GlobalNamespace>potato</GlobalNamespace>
+
+	<Library>
+		<Name>thirdparty_openal</Name>
+		<SourceRoot>.</SourceRoot>
+		<ExportedIncludeDirectory>include</ExportedIncludeDirectory>
+		<LocalIncludeDirectory>include</LocalIncludeDirectory>
+		<LocalIncludeDirectory>common</LocalIncludeDirectory>
+		<PreprocessorDefines>AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES</PreprocessorDefines>
+		<ThirdParty>true</ThirdParty>
+
+		<ThirdPartySharedGlobalExportDefine>AL_LIBTYPE_SHARED</ThirdPartySharedGlobalExportDefine>
+		<ThirdPartySharedLocalBuildDefine>AL_LIBTYPE_SHARED_EXPORTS</ThirdPartySharedLocalBuildDefine>		
+
+		<ThirdPartySourceFile>
+			al\auxeffectslot.cpp
+			al\buffer.cpp
+			al\debug.cpp
+			al\effect.cpp
+			al\error.cpp
+			al\event.cpp
+			al\extension.cpp
+			al\filter.cpp
+			al\listener.cpp
+			al\source.cpp
+			al\state.cpp
+			al\eax\api.cpp
+			al\eax\call.cpp
+			al\eax\exception.cpp
+			al\eax\fx_slots.cpp
+			al\eax\fx_slot_index.cpp
+			al\eax\utils.cpp
+			al\effects\autowah.cpp
+			al\effects\chorus.cpp
+			al\effects\compressor.cpp
+			al\effects\convolution.cpp
+			al\effects\dedicated.cpp
+			al\effects\distortion.cpp
+			al\effects\echo.cpp
+			al\effects\effects.cpp
+			al\effects\equalizer.cpp
+			al\effects\fshifter.cpp
+			al\effects\modulator.cpp
+			al\effects\null.cpp
+			al\effects\pshifter.cpp
+			al\effects\reverb.cpp
+			al\effects\vmorpher.cpp
+			alc\alc.cpp
+			alc\alconfig.cpp
+			alc\alu.cpp
+			alc\context.cpp
+			alc\device.cpp
+			alc\events.cpp
+			alc\panning.cpp
+			alc\backends\loopback.cpp
+			alc\backends\null.cpp
+			alc\backends\wave.cpp
+			alc\effects\autowah.cpp
+			alc\effects\chorus.cpp
+			alc\effects\compressor.cpp
+			alc\effects\convolution.cpp
+			alc\effects\dedicated.cpp
+			alc\effects\distortion.cpp
+			alc\effects\echo.cpp
+			alc\effects\equalizer.cpp
+			alc\effects\fshifter.cpp
+			alc\effects\modulator.cpp
+			alc\effects\null.cpp
+			alc\effects\pshifter.cpp
+			alc\effects\reverb.cpp
+			alc\effects\vmorpher.cpp
+			build\CMakeFiles\3.23.0\CompilerIdCXX\CMakeCXXCompilerId.cpp
+			common\alcomplex.cpp
+			common\alfstream.cpp
+			common\almalloc.cpp
+			common\alsem.cpp
+			common\alstring.cpp
+			common\althrd_setname.cpp
+			common\dynload.cpp
+			common\pffft.cpp
+			common\polyphase_resampler.cpp
+			common\ringbuffer.cpp
+			common\strutils.cpp
+			core\ambdec.cpp
+			core\ambidefs.cpp
+			core\bformatdec.cpp
+			core\bs2b.cpp
+			core\bsinc_tables.cpp
+			core\buffer_storage.cpp
+			core\context.cpp
+			core\converter.cpp
+			core\cpu_caps.cpp
+			core\cubic_tables.cpp
+			core\devformat.cpp
+			core\device.cpp
+			core\effectslot.cpp
+			core\except.cpp
+			core\fmt_traits.cpp
+			core\fpu_ctrl.cpp
+			core\helpers.cpp
+			core\hrtf.cpp
+			core\logging.cpp
+			core\mastering.cpp
+			core\mixer.cpp
+			core\uhjfilter.cpp
+			core\uiddefs.cpp
+			core\voice.cpp
+			core\filters\biquad.cpp
+			core\filters\nfc.cpp
+			core\filters\splitter.cpp
+			core\mixer\mixer_c.cpp
+			core\mixer\mixer_sse.cpp
+			core\mixer\mixer_sse2.cpp
+			core\mixer\mixer_sse3.cpp
+			core\mixer\mixer_sse41.cpp
+		</ThirdPartySourceFile>
+
+		<FilterPlatform include="windows">
+			<PreprocessorDefines>ALSOFT_BACKEND_WINMM=false;;NOMINMAX;RESTRICT=__restrict</PreprocessorDefines>
+			<ThirdPartySourceFile>
+				alc\backends\base.cpp
+				alc\backends\dsound.cpp
+				alc\backends\wasapi.cpp
+				alc\backends\winmm.cpp
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
+		<FilterPlatform include="linux">
+			<ThirdPartySourceFile>
+				alc\backends\alsa.cpp
+				alc\backends\pulseaudio.cpp
+				core\dbus_wrap.cpp
+				core\rtkit.cpp
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
+		<FilterPlatform include="darwin">
+			<!-- SystemFramework>Foundation;CoreFoundation;CoreAudio;AudioUnit</SystemFramework-->
+			<ThirdPartySourceFile>
+				alc\backends\coreaudio.cpp
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
+		<FilterPlatform include="arm">
+			<ThirdPartySourceFile>
+				core\mixer\mixer_neon.cpp
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
+		<FilterPlatform include="unused">
+			<ThirdPartySourceFile>
+				alc\backends\alsa.cpp
+				alc\backends\base.cpp
+				alc\backends\coreaudio.cpp
+				alc\backends\dsound.cpp
+				alc\backends\jack.cpp
+				alc\backends\oboe.cpp
+				alc\backends\opensl.cpp
+				alc\backends\oss.cpp
+				alc\backends\pipewire.cpp
+				alc\backends\portaudio.cpp
+				alc\backends\pulseaudio.cpp
+				alc\backends\sdl2.cpp
+				alc\backends\sndio.cpp
+				alc\backends\solaris.cpp
+				alc\backends\wasapi.cpp
+
+				examples\alffplay.cpp
+				examples\alstreamcb.cpp
+				router\al.cpp
+				router\alc.cpp
+				router\router.cpp
+				tests\example.t.cpp
+				utils\sofa-info.cpp
+				utils\sofa-support.cpp
+				utils\uhjdecoder.cpp
+				utils\uhjencoder.cpp
+				utils\alsoft-config\main.cpp
+				utils\alsoft-config\mainwindow.cpp
+				utils\alsoft-config\verstr.cpp
+				utils\makemhr\loaddef.cpp
+				utils\makemhr\loadsofa.cpp
+				utils\makemhr\makemhr.cpp
+
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+		
+	</Library>
+	
+</Module>
